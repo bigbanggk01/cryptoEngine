@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./jquery-3.6.0.min.js"></script>
+    <script src="./crypto-js.min.js"></script>
+    <script src="./jsencrypt.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <title>E2EE</title>
+</head>
+<body>
+    <div>
+        <h1>Encryption Engine</h1>
+    </div>
+    <div id="rsa-zone">
+        <h3>RSA Encryption</h3>
+        <br>
+        <div id="rsa-encryption">
+            <div>
+                <h5>RSA public key:</h1>
+                <textarea id="pubkey" cols="32" rows="10"></textarea>
+            </div>
+            
+            <div>
+                <h5>RSA private key:</h5>
+                <textarea id="privkey" cols="32" rows="10"></textarea>
+            </div>
+            
+        </div>
+        <br>
+        <input id="rsa-key-size" placeholder="RSA key size">
+        <button id="generate">Generate</button>
+        <br>
+        <div id="text">
+            <h5>What you one to Encrypt:</h1>
+            <textarea id="plaintext" cols="63" rows="10"></textarea><br>
+            <button id="encrypt">GO</button><br>
+            <textarea id="ciphertext" cols="63" rows="10"></textarea>
+        </div>
+
+        <h3>RSA Decryption</h3>
+        <br>
+        <div id="rsa-decryption">
+            <textarea id="cipher" placeholder="Copy cipher text here...." cols="63" rows="10"></textarea>
+            <br>
+            <button id="decrypt">GO</button>
+            <br>
+            <br>
+            <textarea id="plaintext-decrypted" cols="63" rows="10"></textarea>
+        </div>
+    </div>
+
+    <div id="ars-zone">
+        <h3>AES Encryption</h3>
+        <div id="aes-text">
+            <h5>What you one to Encrypt:</h1>
+            <textarea id="aes-plaintext" cols="63" rows="10"></textarea><br>
+            <div id="ars-encryption">
+                <div>
+                    <input id="pass" placeholder="Password">
+                    
+                    <button id="aes-encrypt">GO</button><br>
+                </div>
+            </div>
+            <br>
+            <textarea id="aes-ciphertext" cols="63" rows="10"></textarea>
+        </div>
+        <br>
+        
+        <br>
+        
+
+        <h3>AES Decryption</h3>
+        <br>
+        <div id="aes-decryption">
+            <textarea id="aes-cipher" placeholder="Copy cipher text here...." cols="63" rows="10"></textarea>
+            <br>
+            <input id="passX" placeholder="Password">
+            <button id="aes-decrypt">GO</button>
+            <br>
+            <br>
+            <textarea id="plaintext2" cols="63" rows="10"></textarea>
+        </div>
+    </div>
+</body>
+    <style>
+        html{
+            font-family: 'Righteous', cursive;
+        }
+        #rsa-encryption{
+            display: inline-flex;
+            margin-left: 10%;
+        }
+        #rsa-key-size{
+            margin-left: 10%;
+        }
+        #text{
+            margin-left: 10%;
+        }
+        #encrypt{
+            margin-left: 33.2em;
+        }
+        #rsa-decryption{
+            margin-left: 10%;
+        }
+        #aes-text{
+            margin-left: 10%;
+        }
+        #ars-encryption{
+            margin-left: 0;
+        }
+        #aes-decryption{
+            margin-left: 10%;
+        }
+        #aes-decrypt{
+            margin-left: 20.2em;
+        }
+        #pass{
+            margin-left: 0;
+        }
+        #aes-encrypt{
+            margin-left: 20.2em;
+        }
+        #decrypt{
+            margin-left: 33.2em;
+        }
+    </style>
+    <script src="./RSA.js"></script>
+    <script src="./AES.js"></script>
+</html>
